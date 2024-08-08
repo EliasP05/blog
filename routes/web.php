@@ -1,20 +1,30 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use Illuminate\Routing\Route as RoutingRoute;
 use Illuminate\Support\Facades\Route;
 
-
-//esta es un funcion que muestra una vista cuando en la url nos ubicaomos en la raiz  '\'
+//fuones de rutas de tipo get
+//esta es un funcion que muestra una vista 
+//cuando en la url nos ubicaomos en la raiz  '\'
+//ñas vistas se encuentran en la carpeta resourcer/view
 Route::get('/', function () {
     return view('welcome');
 });
 //la funcion anterior tambien puede ser de la siguiente manera:
-// route::view('/','welcome');
-route::view('/','nosotros');
-route::view('/','about');
-route::view('/','contacto');
+// 
+route::view('/','welcome')->name('home');
+route::view('contacto','contact')->name('contact');
+route::view('blog','blog')->name('blog');
+route::view('nosotros','about')->name('about');
 
 
+//otras rutas de tipo
+// Route::post();
+// Route::patch();
+// Route::put();
+// Route::delete();
+// Route::options();
 
 Route::get('/dashboard', function () {
     return view('dashboard');

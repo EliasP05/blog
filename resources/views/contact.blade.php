@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>nosotros</h1>
+@include('partials.navigation')
+    <h1>contacto</h1>
 </body>
 </html>
