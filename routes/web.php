@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Routing\Route as RoutingRoute;
 use Illuminate\Support\Facades\Route;
@@ -8,14 +9,27 @@ use Illuminate\Support\Facades\Route;
 //esta es un funcion que muestra una vista 
 //cuando en la url nos ubicaomos en la raiz  '\'
 //ñas vistas se encuentran en la carpeta resourcer/view
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 //la funcion anterior tambien puede ser de la siguiente manera:
 // 
+//array y mandejo de variables
+$post=[
+    ['title'=>'Primer post'],
+    ['title'=>'Segundo post'],
+    ['title'=>'Tecer post'],
+    ['title'=>'Cuarto post'],
+    ['title'=>'Quinto post']
+];
 route::view('/','welcome')->name('home');
 route::view('contacto','contact')->name('contact');
-route::view('blog','blog')->name('blog');
+// route::view('blog','blog',['posts'=>$post])->name('blog');
+//otra forma de pasar variables array
+route::get('blog',[PostController::class,'index']) -> name('blog');
+
+//para mantner un orden es recomendale usar CONTROLADORES
+
 route::view('nosotros','about')->name('about');
 
 

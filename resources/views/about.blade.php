@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-@include('partials.navigation')
+<x-layout meta-title="About" meta-description="nosotros description">
     <h1>Nosotros</h1>
-</body>
-</html>
+</x-layout>
+    
