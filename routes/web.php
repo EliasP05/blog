@@ -15,13 +15,13 @@ use Illuminate\Support\Facades\Route;
 //la funcion anterior tambien puede ser de la siguiente manera:
 // 
 //array y mandejo de variables
-$post=[
+/* $post=[
     ['title'=>'Primer post'],
     ['title'=>'Segundo post'],
     ['title'=>'Tecer post'],
     ['title'=>'Cuarto post'],
     ['title'=>'Quinto post']
-];
+]; */
 route::view('/','welcome')->name('home');
 route::view('contacto','contact')->name('contact');
 // route::view('blog','blog',['posts'=>$post])->name('blog');
