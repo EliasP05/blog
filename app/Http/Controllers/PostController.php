@@ -1,11 +1,12 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
-    public function index() //1 solo metodo
+    public function index()
     {
         /* $post=[
             ['title'=>'Primer post'],
@@ -14,9 +15,18 @@ class PostController extends Controller
             ['title'=>'Cuarto post'],
             ['title'=>'Quinto post']
         ]; */
-        $post= DB::table('posts')->get();
-
-        return view('blog',['posts'=>$post]);
+        // $post= DB::table('posts')->get(); //con este metodo indicamos en nombre de la tabla
+        $post= Post::get(); //aqui no se debe indicar, eloquent asume que la tabla se llama posts como el modelo pero en plural
+        return view('posts.index',['posts'=>$post]);
     }
+    /* public function show($post)
+    {
+       return Post::findorFail($post);
+        // return 'detalle del post '.$post;
+    } */
+   public function show(Post $post)
+   {
+    return view('posts.show',['post'=>$post]);
+   }
 }
 ?>
