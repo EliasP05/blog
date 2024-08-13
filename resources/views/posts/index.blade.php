@@ -1,5 +1,6 @@
 <x-layout meta-title="Blog" meta-description="blog description">
     <h1>blog</h1>
+    <a href="{{route('posts.create')}}">crear nuevo post</a>
     <ul>
         @foreach ($posts as $post )
             <li>

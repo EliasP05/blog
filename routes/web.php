@@ -27,6 +27,9 @@ route::view('contacto','contact')->name('contact');
 // route::view('blog','blog',['posts'=>$post])->name('blog');
 //otra forma de pasar variables array
 route::get('blog',[PostController::class,'index']) -> name('posts.index');
+route::get('/blog/create',[PostController::class,'create'])->name('posts.create');
+route::post('/blog',[PostController::class,'store'])->name('posts.store');
+
 route::get('/blog/{post}',[PostController::class,'show'])->name('posts.show');
 //para mantner un orden es recomendale usar CONTROLADORES
 
