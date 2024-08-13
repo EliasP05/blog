@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
@@ -31,8 +32,12 @@ class PostController extends Controller
    public function create(){
     return view('posts.create');
    }
-   public function store(){
-    return 'string';
+   public function store(Request $request){
+    $post=new Post;
+    $post->title=$request->input('title');
+    $post->body=$request->input('body');
+    $post->save();
+    return  redirect()->route('posts.index'); //to_route() hace lo mismo
    }
 }
 ?>

@@ -8,7 +8,7 @@
         </label><br>
         <label for="">
             Body <br>
-            <textarea name="textarea" id="" cols="30" rows="10"></textarea>
+            <textarea name="body" id="" cols="30" rows="10"></textarea>
         </label><br>
         <button type="submit">Enviar</button> 
         
