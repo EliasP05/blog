@@ -1,4 +1,10 @@
 <x-layout meta-title="Blog" meta-description="blog description">
+    @if (session('status'))
+        <div class="status">
+            {{session('status')}}
+        </div>
+    @endif
+    
     <h1>blog</h1>
     <a href="{{route('posts.create')}}">crear nuevo post</a>
     <ul>
