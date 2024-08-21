@@ -10,7 +10,9 @@
     <ul>
         @foreach ($posts as $post )
             <li>
-                <a href="{{route('posts.show',$post->id)}}">{{ $post->title }} </a>   
+                <a href="{{route('posts.show',$post)}}">{{ $post->title }} </a>   
+                &nbsp;
+                <a href="{{route('posts.edit',$post)}}">edit</a>
             </li>
         @endforeach 
     </ul>

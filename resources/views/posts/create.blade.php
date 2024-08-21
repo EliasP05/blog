@@ -8,7 +8,7 @@
     <form method="POST" action="{{route('posts.store')}}">
         @csrf
         <label for="">
-            Title 
+            {{__('title')}}:
             <input type="text" name="title" id="" value="{{old('title')}}">
             
             @error('title')
@@ -17,7 +17,7 @@
             @enderror
         </label><br>
         <label for="">
-            Body <br>
+            {{__('body')}}: <br>
             <textarea name="body" id="" cols="30" rows="10" value="{{old('body')}}"></textarea>
              
             @error('body')

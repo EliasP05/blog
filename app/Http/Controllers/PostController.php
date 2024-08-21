@@ -26,25 +26,38 @@ class PostController extends Controller
         // return 'detalle del post '.$post;
     } */
    public function show(Post $post)
+    {
+            return view('posts.show',['post'=>$post]);
+    }
+
+   public function create()
+    {
+    
+        return view('posts.create');
+   
+    }
+
+   public function store(Request $request)
    {
-    return view('posts.show',['post'=>$post]);
-   }
-   public function create(){
-    return view('posts.create');
-   }
-   public function store(Request $request){
-    $request->validate([
-        'title'=>['required'],
-        'body'=>['required'],
-    ]);
-    $post=new Post;
-    $post->title=$request->input('title');
-    $post->body=$request->input('body');
-    $post->save();
+        $request->validate([
 
-    session()->flash('status','Post creado');
+            'title'=>['required'],
+            'body'=>['required'],
+        
+        ]);
+        $post=new Post;
+        $post->title=$request->input('title');
+        $post->body=$request->input('body');
+        $post->save();
 
-    return  redirect()->route('posts.index'); //to_route() hace lo mismo
+        session()->flash('status','Post creado');
+
+        return  redirect()->route('posts.index'); //to_route() hace lo mismo
    }
+
+   public function edit(Post $post)
+   {
+        return view('posts.edit',['post' => $post]);
+    }
 }
 ?>
