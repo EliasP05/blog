@@ -12,7 +12,14 @@
             <li>
                 <a href="{{route('posts.show',$post)}}">{{ $post->title }} </a>   
                 &nbsp;
-                <a href="{{route('posts.edit',$post)}}">edit</a>
+                <a href="{{route('posts.edit',$post)}}">{{__('Edit')}}</a>
+                &nbsp;
+                {{-- <a href="{{route('posts.delete',$post)}}">{{__('Delete')}}</a> NO FUNCNIONA MISMA RUTA QUE SHOW.--}}
+                <form action="{{route('posts.delete',$post)}}" method="post">
+                    @csrf 
+                    @method('delete')
+                    <button type="submit">{{__('Delete')}}</button>
+                </form>
             </li>
         @endforeach 
     </ul>

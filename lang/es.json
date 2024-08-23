@@ -86,5 +86,8 @@
     "Your email address is unverified.": "Su dirección de correo electrónico no está verificada.",
     "title":"Titulo",
     "body":"contenido",
-    "Edit":"Editar"
+    "Edit":"Editar",
+    "Send":"Enviar",
+    "Delete":"Eliminar"
+
 }
