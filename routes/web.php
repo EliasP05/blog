@@ -34,6 +34,7 @@ route::post('/blog',[PostController::class,'store'])->name('posts.store');
 
 route::get('/blog/{post}',[PostController::class,'show'])->name('posts.show');
 route::get('/blog/{post}/edit',[PostController::class,'edit'])->name('posts.edit');
+route::patch('/blog/{post}',[PostController::class,'update'])->name('posts.update');
 //para mantner un orden es recomendale usar CONTROLADORES
 
 route::view('nosotros','about')->name('about');

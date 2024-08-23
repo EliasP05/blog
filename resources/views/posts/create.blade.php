@@ -18,7 +18,7 @@
         </label><br>
         <label for="">
             {{__('body')}}: <br>
-            <textarea name="body" id="" cols="30" rows="10" value="{{old('body')}}"></textarea>
+            <textarea name="body" id="" cols="30" rows="10">{{old('body')}}</textarea>
              
             @error('body')
             <br>
